@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if object_list %}
+        <b>Результаты поиска:</b>
+        <ul>
+            {% for result in object_list %}
+                <li><a href="/architectures/{{ result.id }}/">{{ result.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <b>Ничего не найдено. Попробуйте изменить поисковый запрос.</b>
+    {% endif %}
+
+{% endblock %}

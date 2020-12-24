@@ -1,0 +1,38 @@
+{% load static %}
+<html>
+{% block head %}
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title> {% block title %}Архитектуры ВС{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static "bootstrap-4/css/bootstrap.css" %}">
+        <script src="{% static "bootstrap-4/js/bootstrap.bundle.js" %}"></script>
+    </head>
+{% endblock %}
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Архитектуры вычислительных систем</a>
+
+  <div class="collapse navbar-collapse float-left" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/architectures">Список архитектур ВС <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+        <form class="form-inline my-2 my-lg-0" action="/search/" method="get">
+            <input class="mr-sm-2" name="q" type="text" placeholder="Search...">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </form>
+  </div>
+</nav>
+
+<div class="container my-5">
+    <div id="content">
+        {% block content %} {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for architecture in architectures %}
+        <li><a href="/architectures/{{ architecture.id }}/">{{ architecture.title }}</a></li>
+    {% endfor %}
+{% endblock %}

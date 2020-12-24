@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h5>
+        {{ parent_type.title }}
+    </h5>
+    <br>
+    <p>
+        {{ parent_type.description }}
+    </p>
+    {% for type in architecture_types %}
+        <li><a href="/architecture-types/{{ type.id }}/">{{ type.title }}</a></li>
+    {% endfor %}
+    <br>
+    {% for architecture in architectures %}
+        <li><a href="/architectures/{{ architecture.id }}/">{{ architecture.title }}</a></li>
+    {% endfor %}
+{% endblock %}
